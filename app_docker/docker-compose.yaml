@@ -32,7 +32,7 @@ services:
    build:
      context: ./php-fpm
    volumes:
-     - ./:/var/www/
+     - ../pop-it-mvc:/var/www
    networks:
      - ttit-network
    ports:
