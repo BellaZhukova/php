@@ -1,0 +1,46 @@
+version: ''
+services:
+ docker-nginx:
+  image: nginx
+  ports:
+    - '8094:80'
+  volumes:
+    - ../pop-it-mvc:/var/www
+    - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+  networks:
+    - ttit-network
+ docker-mariadb:
+   image: mariadb
+   volumes:
+     - ttit-vl:/var/lib/mysql
+   environment:
+     - MYSQL_ROOT_PASSWORD=password
+     - MYSQL_DATABASE=database
+     - MYSQL_USER=user
+     - MYSQL_PASSWORD=password
+   networks:
+     - ttit-network
+ docker-phpmyadmin:
+   image: phpmyadmin/phpmyadmin:latest
+   ports:
+     - "8095:80"
+   environment:
+     - PMA_HOST=docker-mariadb
+   networks:
+     - ttit-network
+ docker-php-fpm:
+   build:
+     context: ./php-fpm
+   volumes:
+     - ./:/var/www/
+   networks:
+     - ttit-network
+   ports:
+     - "9000"
+
+volumes:
+  ttit-vl:
+    driver: local
+networks:
+  ttit-network:
+    driver: bridge
