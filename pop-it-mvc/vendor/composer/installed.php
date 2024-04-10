@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e582ec4fc1829d9e363fa6af2c9170444dd9a246',
+        'reference' => '50902c0f28341e58d3ae9c42258623e61b901954',
         'name' => 'izabella/pop-it-mvc',
         'dev' => true,
     ),
@@ -133,7 +133,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e582ec4fc1829d9e363fa6af2c9170444dd9a246',
+            'reference' => '50902c0f28341e58d3ae9c42258623e61b901954',
             'dev_requirement' => false,
         ),
         'nesbot/carbon' => array(
@@ -143,6 +143,17 @@
             'install_path' => __DIR__ . '/../nesbot/carbon',
             'aliases' => array(),
             'reference' => '57fbbf88ce332f6da4e5aa1ea7524ef1caebb9e4',
+            'dev_requirement' => false,
+        ),
+        'nikic/fast-route' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nikic/fast-route',
+            'aliases' => array(
+                0 => '2.0.x-dev',
+            ),
+            'reference' => 'd3ada013d0f683ad2a8d0614fc97917a6ab72ce9',
             'dev_requirement' => false,
         ),
         'psr/clock' => array(

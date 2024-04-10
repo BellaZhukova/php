@@ -4,24 +4,23 @@ namespace Model;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Src\Auth\IdentityInterface;
 
-class User extends Model implements IdentityInterface
+class Pacient extends Model
 {
     use HasFactory;
-
     public $timestamps = false;
     protected $fillable = [
+        'id',
         'name',
-        'login',
-        'password'
+        'surname',
+        'patronymic',
+        'registration',
     ];
 
     protected static function booted()
     {
-        static::created(function ($user) {
-            $user->password = md5($user->password);
-            $user->save();
+        static::created(function ($pacient) {
+            $pacient->save();
         });
     }
 
@@ -35,12 +34,5 @@ class User extends Model implements IdentityInterface
     public function getId(): int
     {
         return $this->id;
-    }
-
-    //Возврат аутентифицированного пользователя
-    public function attemptIdentity(array $credentials)
-    {
-        return self::where(['login' => $credentials['login'],
-            'password' => md5($credentials['password'])])->first();
     }
 }

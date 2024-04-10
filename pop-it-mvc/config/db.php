@@ -1,7 +1,7 @@
 <?php
 return [
     'driver' => 'mysql',
-    'host' => 'db',
+    'host' => 'docker-mariadb',
     'database' => 'database',
     'username' => 'user',
     'password' => 'password',
@@ -9,4 +9,3 @@ return [
     'collation' => 'utf8_unicode_ci',
     'prefix' => '',
 ];
-
