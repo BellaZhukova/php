@@ -9,7 +9,7 @@ if (!app()->auth::check()):
         <label>Имя <input type="text" name="name"></label>
         <label>Фамилия <input type="text" name="surname"></label>
         <label>Отчество <input type="text" name="patronymic"></label>
-        <label>Дата рождения <input type="date" name="date"></label>
-        <button>Записать пациента</button>
+        <label>Дата рождения <input type="date" name="birthday"></label>
+        <button>Создать пациента</button>
     </form>
 <?php endif;

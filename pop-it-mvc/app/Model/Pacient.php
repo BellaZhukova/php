@@ -10,11 +10,10 @@ class Pacient extends Model
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        'id',
         'name',
         'surname',
         'patronymic',
-        'registration',
+        'birthday',
     ];
 
     protected static function booted()
