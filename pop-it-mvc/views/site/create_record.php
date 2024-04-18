@@ -3,6 +3,7 @@
 if (app()->auth::check()):
     ?>
     <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
         <label>Врач <select name="doctor_id">
                 <?php foreach ($doctors as $doctor){
                     echo '<option value="' . $doctor->id . '">' . $doctor->name .' '.$doctor->surname.' '.$doctor->patronymic.' Категория:'.$doctor->special->name. '</option>';

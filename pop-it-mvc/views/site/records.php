@@ -17,6 +17,7 @@
 <button onclick="window.location.href='/createRecord'">Создать запись</button>
 
 <form method="post">
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <label>Врач <select name="id">
             <?php foreach ($records_open as $record){
                 echo '<option value="' . $record->id . '">' . $record->id.'</option>';
